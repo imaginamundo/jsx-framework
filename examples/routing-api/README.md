@@ -1,5 +1,11 @@
 # Example routing API
 
+Start the project running the command:
+
+```
+make
+```
+
 You can create an API using the `Response Object`.
 
 In this example we get the parameters from the url and send it back to the user.

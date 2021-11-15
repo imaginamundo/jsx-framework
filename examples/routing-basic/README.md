@@ -1,5 +1,11 @@
 # Example routing basic
 
+Start the project running the command:
+
+```
+make
+```
+
 You can create an route by creating a new file inside the folder `pages`.
 
 Each file will be a route, following its pattern of folders.

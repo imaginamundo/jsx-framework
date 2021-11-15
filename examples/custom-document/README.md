@@ -1,5 +1,11 @@
 # Example custom document
 
+Start the project running the command:
+
+```
+make
+```
+
 You can have a custom document by creating a file named `_document.jsx` inside the folder `pages`.
 
 The default structure for the document is:
