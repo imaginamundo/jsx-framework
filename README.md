@@ -14,7 +14,7 @@ A project to make easy to create a server side rendering (SSR) with only one com
 To create the folders and files automatically, you can run the command on the folder that you want the project to be:
 
 ``` shell
-deno run --allow-read --allow-net --allow-write --unstable https://raw.githubusercontent.com/imaginamundo/jsx-framework/main/mod.js
+deno run --allow-read --allow-net --allow-write --unstable https://raw.githubusercontent.com/imaginamundo/jsx-framework/v0.0.2/mod.js
 ```
 
 After running, this command you create a Makefile for you, you can execute it by typping:
@@ -61,7 +61,7 @@ export default function() {
 
 After we create our folders and files, we just need to run the following command:
 ```
-deno run --allow-read --allow-net --unstable --import-map=import_map.json https://raw.githubusercontent.com/imaginamundo/jsx-framework/main/mod.js
+deno run --allow-read --allow-net --unstable --import-map=import_map.json https://raw.githubusercontent.com/imaginamundo/jsx-framework/v0.0.2/mod.js
 ```
 
 Whe are running the main file of this repository to walk the folders and see which page to render. It will render on http://localhost:8080.
@@ -238,7 +238,7 @@ A custom document is the HTML where the pages will be located inside, by default
 /** @jsxFrag Fragment */
 import { Fragment, h } from '../deps.js';
 
-export default function Document({ children, head = null, script }) {
+export default function Document({ children, head = null }) {
   return (
     <html lang="en">
       <head>

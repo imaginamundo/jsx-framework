@@ -7,12 +7,10 @@ export default async function responsePage({ request, url, route }) {
   // Import files
   const {
     default: page,
-    head   = () => null,
-    script = () => null
+    head   = () => null
   } = await import(`file://${ userPath }/${ route.path }`);
 
   // Execute exports
-  const Script = script();
   const Head   = head();
   
   // Execute default exports
@@ -22,7 +20,6 @@ export default async function responsePage({ request, url, route }) {
     Page = await page({ request, url });
     Document = await document({
       children: Page,
-      script: Script,
       head: Head
     });
   } catch(err) {
