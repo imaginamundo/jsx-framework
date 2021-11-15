@@ -236,7 +236,7 @@ A custom document is the HTML where the pages will be located inside, by default
 ``` javascript
 /** @jsx h */
 /** @jsxFrag Fragment */
-import { Fragment, h } from '../deps.js';
+import { Fragment, h } from 'jsx';
 
 export default function Document({ children, head = null }) {
   return (
