@@ -1,4 +1,4 @@
-# [not working] Example custom document
+# Example custom document
 
 You can have a custom document by creating a file named `_document.jsx` inside the folder `pages`.
 
@@ -7,7 +7,7 @@ The default structure for the document is:
 ``` javascript
 /** @jsx h */
 /** @jsxFrag Fragment */
-import { Fragment, h } from '../deps.js';
+import { Fragment, h } from 'jsx';
 
 export default function Document({ children, head = null }) {
   return (
