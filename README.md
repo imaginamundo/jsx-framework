@@ -15,7 +15,7 @@ To create the folders and files automatically, you can run the command on the
 folder that you want the project to be:
 
 ```shell
-deno run --allow-read --allow-net --allow-write --unstable https://raw.githubusercontent.com/imaginamundo/jsx-framework/v0.0.2/mod.js
+deno run --allow-read --allow-net --allow-write --unstable https://raw.githubusercontent.com/imaginamundo/jsx-framework/v0.0.3/mod.js
 ```
 
 After running, this command you create a Makefile for you, you can execute it by
@@ -66,7 +66,7 @@ After we create our folders and files, we just need to run the following
 command:
 
 ```
-deno run --allow-read --allow-net --unstable --import-map=import_map.json https://raw.githubusercontent.com/imaginamundo/jsx-framework/v0.0.2/mod.js
+deno run --allow-read --allow-net --unstable --import-map=import_map.json https://raw.githubusercontent.com/imaginamundo/jsx-framework/v0.0.3/mod.js
 ```
 
 Whe are running the main file of this repository to walk the folders and see
