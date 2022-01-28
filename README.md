@@ -5,7 +5,7 @@ command and a few files.
 
 ## Features
 
-- Built on **Deno 1.52.3** and above!
+- Built on **Deno 1.18.1** and above!
 - Folder based routes (a là [Next.js](https://nextjs.org))
 - API Routes
 
