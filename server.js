@@ -1,13 +1,20 @@
-import { listenAndServe } from './deps.js';
+import { serve } from './deps.js';
 import { pageRouter, publicRouter } from './router.js';
-import { notFoundResponse, internalServerErrorResponse } from './response/default.js';
+import {
+  internalServerErrorResponse,
+  notFoundResponse,
+} from './response/default.js';
 
-const addr = ':8080';
+const port = 8080;
 
 async function handler(request) {
   try {
-    const { pageResponse, parameterizedPageResponse } = await pageRouter(request);
-    const publicResponse = pageResponse ? undefined : await publicRouter(request);
+    const { pageResponse, parameterizedPageResponse } = await pageRouter(
+      request,
+    );
+    const publicResponse = pageResponse
+      ? undefined
+      : await publicRouter(request);
 
     // Return in order of priority
     return (
@@ -17,11 +24,11 @@ async function handler(request) {
       notFoundResponse()
     );
   } catch (err) {
-    return internalServerErrorResponse({ body: err.stack })
+    return internalServerErrorResponse({ body: err.stack });
   }
 }
 
 export default async function server() {
-  console.log(`HTTP server running. Access it at: http://localhost${ addr }/`);
-  await listenAndServe(addr, handler);
+  console.log(`HTTP server running. Access it at: http://localhost:${port}/`);
+  await serve(handler, { port });
 }

@@ -1,13 +1,11 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
 import { Fragment, h } from 'jsx';
 
 export default function Document({ children, head = null }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
-        <meta charset="UTF-8" />
-        { head }
+        <meta charset='UTF-8' />
+        {head}
       </head>
       <body>
         <main>

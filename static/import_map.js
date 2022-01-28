@@ -1,9 +1,8 @@
 import { jsx } from '../keys.js';
 
-const importMap = 
-`{
+const importMap = `{
   "imports": {
-    "jsx": "${ jsx }"
+    "jsx": "${jsx}"
   }
 }`;
 

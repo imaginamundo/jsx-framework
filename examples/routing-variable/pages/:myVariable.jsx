@@ -1,8 +1,6 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
 import { Fragment, h } from 'jsx';
 
-export default function({ url }) {
+export default function ({ url }) {
   const query = url.pathname.groups;
-  return <p>Hello { query.myVariable }!</p>;
+  return <p>Hello {query.myVariable}!</p>;
 }
