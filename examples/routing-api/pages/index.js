@@ -1,4 +1,4 @@
-export default function({ url }) {
+export default function ({ url }) {
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
 
@@ -6,7 +6,7 @@ export default function({ url }) {
 
   const init = {
     status: 200,
-    headers
+    headers,
   };
 
   return new Response(JSON.stringify(body), init);

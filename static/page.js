@@ -1,5 +1,4 @@
-const page = 
-`/** @jsx h */
+const page = `/** @jsx h */
 /** @jsxFrag Fragment */
 import { Fragment, h } from 'jsx';
 

@@ -1,45 +1,45 @@
 const notFound = {
   status: 404,
-  text: 'Not Found'
+  text: 'Not Found',
 };
 
 const internalServerError = {
   status: 500,
-  text: 'Internal Server Error'
+  text: 'Internal Server Error',
 };
 
 const ok = {
   status: 200,
-  text: 'OK'
+  text: 'OK',
 };
 
 function notFoundResponse({
   body = notFound.text,
   status = notFound.status,
-  statusText = notFound.text
+  statusText = notFound.text,
 } = {}) {
   return new Response(body, {
     status,
-    statusText
+    statusText,
   });
 }
 
 function internalServerErrorResponse({
   body = internalServerError.text,
   status = internalServerError.status,
-  statusText = internalServerError.text
+  statusText = internalServerError.text,
 } = {}) {
   return new Response(body, {
     status,
-    statusText
+    statusText,
   });
 }
 
 function okResponse({
   body = ok.text,
-  options = {}
+  options = {},
 } = {}) {
   return new Response(body, options);
 }
 
-export { notFoundResponse, internalServerErrorResponse, okResponse };
+export { internalServerErrorResponse, notFoundResponse, okResponse };
