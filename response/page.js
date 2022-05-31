@@ -1,14 +1,14 @@
-import { renderToString } from '../deps.js';
-import { userPath } from '../keys.js';
-import document from '../document.js';
-import { internalServerErrorResponse, okResponse } from './default.js';
-import responseFile from './file.js';
-import generateStaticPage from '../generate_static_page.js';
+import { renderToString } from "../deps.js";
+import { userPath } from "../keys.js";
+import document from "../document.js";
+import { internalServerErrorResponse, okResponse } from "./default.js";
+import responseFile from "./file.js";
+import generateStaticPage from "../generate_static_page.js";
 
 export default async function responsePage({ request, url, route }) {
   // Send static HTML before trying to fetch page
   if (route.staticPage) {
-    console.log(`Using generated file ${ route.staticPage }`);
+    console.log(`Using generated file ${route.staticPage}`);
     return responseFile(request, route.staticPage);
   }
 
@@ -40,7 +40,7 @@ export default async function responsePage({ request, url, route }) {
   // Transform JSX to string
   const body = await renderToString(Document);
   const options = {
-    headers: new Headers({ 'content-type': 'text/html; charset=UTF-8' }),
+    headers: new Headers({ "content-type": "text/html; charset=UTF-8" }),
   };
 
   // Generate static page

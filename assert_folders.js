@@ -1,5 +1,5 @@
-import { bold, ensureDir, green, red } from './deps.js';
-import { userPath } from './keys.js';
+import { bold, ensureDir, green, red } from "./deps.js";
+import { userPath } from "./keys.js";
 
 export default async function assertFolders() {
   const pageFolder = `${userPath}/pages`;
@@ -9,32 +9,30 @@ export default async function assertFolders() {
   if (pageFolderExists.isDirectory) return;
 
   console.log(
-    '\nTo start the project you will need:',
+    "\nTo start the project you will need:",
   );
   console.log(
-    '\n - ./pages:           the routes folder',
+    "\n - ./pages:           the routes folder",
   );
   console.log(
-    ' - ./pages/index.jsx: the route "/"',
+    '\n - ./pages/index.jsx: the route "/"',
   );
   console.log(
-    ' - ./Makefile:        give you the commands "make" to start running the project',
+    "\n - ./deno.json:       Deno configuration file",
   );
   const createFolder = confirm(
-    bold('\nDo you want to create the base for the project?'),
+    bold("\nDo you want to create the base for the project?"),
   );
 
   if (createFolder) {
-    const { default: page } = await import('./static/page.js');
-    const { default: importMap } = await import('./static/import_map.js');
-    const { default: denoConfig } = await import('./static/deno_config.js');
-    const { default: makefile } = await import('./static/makefile.js');
+    const { default: page } = await import("./static/page.js");
+    const { default: importMap } = await import("./static/importmap.js");
+    const { default: denoConfig } = await import("./static/deno_config.js");
 
-    await ensureDir('./pages');
-    await Deno.writeTextFile('./pages/index.jsx', page);
-    await Deno.writeTextFile('./import_map.json', importMap);
-    await Deno.writeTextFile('./deno.json', denoConfig);
-    await Deno.writeTextFile('./Makefile', makefile);
+    await ensureDir("./pages");
+    await Deno.writeTextFile("./pages/index.jsx", page);
+    await Deno.writeTextFile("./importmap.json", importMap);
+    await Deno.writeTextFile("./deno.json", denoConfig);
     console.log(
       bold(
         green('\nFiles created, run the command "make run" to run the project'),
@@ -42,7 +40,7 @@ export default async function assertFolders() {
     );
   } else {
     console.log(
-      bold(red('\nNo files created, process ended')),
+      bold(red("\nNo files created, process ended")),
     );
   }
 

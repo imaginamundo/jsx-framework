@@ -15,20 +15,14 @@ To create the folders and files automatically, you can run the command on the
 folder that you want the project to be:
 
 ```shell
-deno run --allow-read --allow-net --allow-write --unstable https://raw.githubusercontent.com/imaginamundo/jsx-framework/v0.0.3/mod.js
+deno run --allow-read --allow-net --allow-write --unstable https://raw.githubusercontent.com/imaginamundo/jsx-framework/v0.0.4/mod.js
 ```
 
 After running, this command you create a Makefile for you, you can execute it by
 typping:
 
 ```
-make run
-```
-
-or
-
-```
-make
+deno task start
 ```
 
 ## Manual Installation
@@ -55,7 +49,7 @@ The `import_map.json` will be where we will put our dependencies:
 The `index.jsx` file will be an functional JSX component:
 
 ```javascript
-import { Fragment, h } from 'jsx';
+import { Fragment, h } from "jsx";
 
 export default function () {
   return <p>Hello world!</p>;
@@ -103,7 +97,7 @@ Creating the file `:pokemon.jsx` inside the folder `pages`, you will receive the
 You can get the variable with the parameter from the exported page:
 
 ```javascript
-import { Fragment, h } from 'jsx';
+import { Fragment, h } from "jsx";
 
 export default function ({ url }) {
   const { pokemon } = url.pathname.groups;
@@ -149,7 +143,7 @@ To add a custom tag on `head` html, you can export a function called `head`
 inside your page.
 
 ```javascript
-import { Fragment, h } from 'jsx';
+import { Fragment, h } from "jsx";
 
 export default function () {
   return <p>Hello world!</p>;
@@ -168,7 +162,7 @@ will also have access to the `request` object.
 To see what the `request` object can give you, here is an example:
 
 ```javascript
-import { Fragment, h } from 'jsx';
+import { Fragment, h } from "jsx";
 
 export default function ({ request, url }) {
   const { pokemon } = url.pathname.groups;
@@ -210,10 +204,10 @@ You can fetch data on the simples way, just use fetch to get your resources an
 await it before responding the JSX:
 
 ```javascript
-import { Fragment, h } from 'jsx';
+import { Fragment, h } from "jsx";
 
 export default async function () {
-  const pokemon = await fetch('https://pokeapi.co/api/v2/pokemon/1')
+  const pokemon = await fetch("https://pokeapi.co/api/v2/pokemon/1")
     .then((res) => res.json());
 
   return <p>{pokemon.name}!</p>;
@@ -225,12 +219,15 @@ retrieve the data from PokeApi, and use it inside the JSX.
 
 ### Static pages
 
-Static pages its a mode that will generate a HTML of that page. If you page make an request, it will only get that request at the first time the page loads, and after that will stream the html saved.
+Static pages its a mode that will generate a HTML of that page. If you page make
+an request, it will only get that request at the first time the page loads, and
+after that will stream the html saved.
 
-To create an static page you need to export a variable `const staticPage = true;` on the page you want that to happen.
+To create an static page you need to export a variable
+`const staticPage = true;` on the page you want that to happen.
 
 ```javascript
-import { Fragment, h } from 'jsx';
+import { Fragment, h } from "jsx";
 
 export default function () {
   return <p>Hello Static!</p>;
@@ -240,7 +237,6 @@ export const staticPage = true;
 ```
 
 This will generate an HTML of that page.
-
 
 ### Creating an API (or responding something else than HTML)
 
@@ -252,9 +248,9 @@ You can see how it works:
 ```javascript
 export default function () {
   const headers = new Headers();
-  headers.append('Content-Type', 'application/json');
+  headers.append("Content-Type", "application/json");
 
-  const body = { hello: 'world!' };
+  const body = { hello: "world!" };
   const init = {
     status: 200,
     headers,
@@ -276,15 +272,15 @@ A custom document is the HTML where the pages will be located inside, by default
 we use a document like this:
 
 ```javascript
-import { Fragment, h } from 'jsx';
+import { Fragment, h } from "jsx";
 
 export default function Document({ children, head = null }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <head>
-        <meta charset='UTF-8' />
-        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {head}
         {script}
       </head>
@@ -312,7 +308,6 @@ the default document that we use to render the pages.
 - [ ] Tests, please 🥺;
 - [ ] Custom error page;
 - [ ] Explicit routes;
-
 
 ## Acknowledgements
 

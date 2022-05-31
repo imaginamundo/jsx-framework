@@ -1,6 +1,6 @@
-import routes from './read_routes.js';
-import responsePage from './response/page.js';
-import responseFile from './response/file.js';
+import routes from "./read_routes.js";
+import responsePage from "./response/page.js";
+import responseFile from "./response/file.js";
 
 function iterateRoutes(routes, request) {
   for (const view of routes) {
@@ -22,10 +22,10 @@ function iterateRoutes(routes, request) {
 }
 
 export function pageRouter(request) {
-  const pageResponse = iterateRoutes(routes.pages, request, 'page');
+  const pageResponse = iterateRoutes(routes.pages, request, "page");
   const parameterizedPageResponse = pageResponse
     ? undefined
-    : iterateRoutes(routes.parameterizedPages, request, 'page');
+    : iterateRoutes(routes.parameterizedPages, request, "page");
 
   return {
     pageResponse,

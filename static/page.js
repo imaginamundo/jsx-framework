@@ -1,6 +1,4 @@
-const page = `/** @jsx h */
-/** @jsxFrag Fragment */
-import { Fragment, h } from 'jsx';
+const page = `import { Fragment, h } from "jsx";
 
 export default function() {
   return <p>Hello world!</p>;
