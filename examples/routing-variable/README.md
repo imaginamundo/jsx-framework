@@ -3,7 +3,7 @@
 Start the project running the command:
 
 ```
-make
+deno task start
 ```
 
 You can create an route with an variable by creating a file that starts with the

@@ -3,13 +3,13 @@ export function routeFromPath(path) {
   let route = path.substring(5);
 
   // Remove file extension
-  route = route.split('.');
+  route = route.split(".");
   route.pop();
-  route = route.join('.');
+  route = route.join(".");
 
   // Remove index
-  if (route === '/index') route = '/';
-  if (route.endsWith('/index')) route = route.slice(0, route.length - 6);
+  if (route === "/index") route = "/";
+  if (route.endsWith("/index")) route = route.slice(0, route.length - 6);
 
   return route;
 }

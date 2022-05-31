@@ -1,16 +1,16 @@
 const notFound = {
   status: 404,
-  text: 'Not Found',
+  text: "Not Found",
 };
 
 const internalServerError = {
   status: 500,
-  text: 'Internal Server Error',
+  text: "Internal Server Error",
 };
 
 const ok = {
   status: 200,
-  text: 'OK',
+  text: "OK",
 };
 
 function notFoundResponse({

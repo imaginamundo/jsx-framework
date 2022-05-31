@@ -3,7 +3,7 @@
 Start the project running the command:
 
 ```
-make
+deno task start
 ```
 
 You can send html to go inside the `head` of the page.

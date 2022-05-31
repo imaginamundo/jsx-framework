@@ -1,4 +1,4 @@
-import { Fragment, h } from 'jsx';
+import { Fragment, h } from "jsx";
 
 export default function ({ url }) {
   const query = url.pathname.groups;

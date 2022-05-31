@@ -4,12 +4,8 @@
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment"
   },
-  "fmt": {
-    "options": {
-      "useTabs": false,
-      "lineWidth": 80,
-      "indentWidth": 2,
-      "singleQuote": true
-    }
+  "importMap": "./importmap.json",
+  "tasks": {
+    "start": "deno run --allow-net --allow-read --allow-write ../../mod.js"
   }
 }

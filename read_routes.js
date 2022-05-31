@@ -1,6 +1,6 @@
-import { walk } from './deps.js';
-import { userPath } from './keys.js';
-import { publicRouteFromPath, routeFromPath } from './route_from_path.js';
+import { walk } from "./deps.js";
+import { userPath } from "./keys.js";
+import { publicRouteFromPath, routeFromPath } from "./route_from_path.js";
 
 const routes = {
   pages: [],
@@ -13,9 +13,9 @@ const routes = {
 function verifyParameter(fullPath) {
   let parameter = false;
 
-  const splittedPath = fullPath.substring(6).split('/');
+  const splittedPath = fullPath.substring(6).split("/");
   for (const path of splittedPath) {
-    if (path.startsWith(':')) {
+    if (path.startsWith(":")) {
       parameter = true;
       break;
     }
@@ -25,8 +25,8 @@ function verifyParameter(fullPath) {
 }
 
 // Generate routes for pages
-const pagePath = 'pages';
-const pageOptions = { skip: ['pages/_document.jsx'] };
+const pagePath = "pages";
+const pageOptions = { skip: ["pages/_document.jsx"] };
 const pageFolder = `${userPath}/pages`;
 const pageFolderExists = await Deno.stat(pageFolder).catch(() => false);
 
@@ -55,7 +55,7 @@ const publicFolder = `${userPath}/public`;
 const publicFolderExists = await Deno.stat(publicFolder).catch(() => false);
 
 if (publicFolderExists) {
-  for await (const entry of walk('./public')) {
+  for await (const entry of walk("./public")) {
     if (entry.isDirectory) continue;
 
     routes.public.push({

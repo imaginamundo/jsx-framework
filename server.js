@@ -1,9 +1,9 @@
-import { serve } from './deps.js';
-import { pageRouter, publicRouter } from './router.js';
+import { serve } from "./deps.js";
+import { pageRouter, publicRouter } from "./router.js";
 import {
   internalServerErrorResponse,
   notFoundResponse,
-} from './response/default.js';
+} from "./response/default.js";
 
 const port = 8080;
 
@@ -29,6 +29,5 @@ async function handler(request) {
 }
 
 export default async function server() {
-  console.log(`HTTP server running. Access it at: http://localhost:${port}/`);
   await serve(handler, { port });
 }

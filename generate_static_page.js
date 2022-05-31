@@ -1,16 +1,16 @@
-import { ensureDir } from './deps.js';
+import { ensureDir } from "./deps.js";
 
 export default async function generateStaticPage(body, route) {
   // Create html path
-  let htmlPath = route.path.split('.');
+  let htmlPath = route.path.split(".");
   htmlPath.pop();
-  htmlPath = htmlPath.join('.');
+  htmlPath = htmlPath.join(".");
   htmlPath = `./.static/${htmlPath}.html`;
 
   // Ensure html folder
-  let htmlDir = htmlPath.split('/');
+  let htmlDir = htmlPath.split("/");
   htmlDir.pop();
-  htmlDir = htmlDir.join('/');
+  htmlDir = htmlDir.join("/");
   await ensureDir(htmlDir);
 
   // Create html

@@ -3,7 +3,7 @@
 Start the project running the command:
 
 ```
-make
+deno task start
 ```
 
 You can create an API using the `Response Object`.
