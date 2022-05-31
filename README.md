@@ -5,7 +5,7 @@ command and a few files.
 
 ## Features
 
-- Built on **Deno 1.18.1** and above!
+- Built on **Deno 1.22.1** and above!
 - Folder based routes (a là [Next.js](https://nextjs.org))
 - API Routes
 
@@ -33,10 +33,11 @@ Create the folders to the directory:
 project
  ┣ pages
  ┃ ┗ index.jsx
- ┗ import_map.json
+ ┣ deno.json
+ ┗ importmap.json
 ```
 
-The `import_map.json` will be where we will put our dependencies:
+The `importmap.json` will be where we will put our dependencies:
 
 ```json
 {
@@ -56,11 +57,28 @@ export default function () {
 }
 ```
 
+`deno.json` will set the default configurations to the project work as intended
+
+
+```json
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment"
+  },
+  "importMap": "./importmap.json",
+  "tasks": {
+    "start": "deno run --allow-net --allow-read --allow-write https://raw.githubusercontent.com/imaginamundo/jsx-framework/v0.4.0/mod.js"
+  }
+}
+```
+
 After we create our folders and files, we just need to run the following
 command:
 
 ```
-deno run --allow-read --allow-net --unstable --import-map=import_map.json https://raw.githubusercontent.com/imaginamundo/jsx-framework/v0.0.3/mod.js
+deno task start
 ```
 
 Whe are running the main file of this repository to walk the folders and see
